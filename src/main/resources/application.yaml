@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: jpa-relations-demo
+  datasource:
+    # Le nom de la base DOIT figurer dans l'URL (sinon : "No database selected")
+    url: jdbc:mariadb://localhost:3306/hb-01-one-to-one-uni
+    username: springstudent
+    password: springstudent
+  jpa:
+    hibernate:
+      # On fournit le schéma via sql/script.sql : Hibernate ne le recrée pas
+      ddl-auto: none
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: trace
+        orm:
+          jdbc:
+            bind: trace
